@@ -70,6 +70,7 @@
   align-content: center;
   gap: 32px;
   flex-wrap: wrap;
+  padding-bottom: 60px;
 }
 
 .workItem {
