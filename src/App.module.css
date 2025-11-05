@@ -152,11 +152,33 @@
 
 .worksDetailContent {
   color: var(--mono-30, #4a4a4a);
-  text-align: center;
+  text-align: left;
   font-family: Pretendard;
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
   line-height: 180%;
   white-space: pre-wrap;
+}
+
+.worksDetailContent h1,
+.worksDetailContent h2,
+.worksDetailContent h3 {
+  margin-top: 3rem;
+  font-weight: 700;
+}
+
+.worksDetailContent p {
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.worksDetailContent a {
+  color: #9fd3ff;
+  text-decoration: underline;
+}
+
+.worksDetailContent ul {
+  list-style-type: disc;
+  margin-left: 1.5rem;
 }

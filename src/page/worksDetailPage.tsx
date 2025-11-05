@@ -1,5 +1,7 @@
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
 import { useParams } from 'react-router-dom';
+import rehypeRaw from 'rehype-raw';
 
 import styles from '../App.module.css';
 import { works } from '../data/works';
@@ -50,7 +52,11 @@ const WorksDetailPage: React.FC = () => {
         <p>{selectedWork.date}</p>
         <p>#{selectedWork.keywords.join(', #')}</p>
       </div>
-      <p className={styles.worksDetailContent}>{selectedWork.content}</p>
+      <div className={styles.worksDetailContent}>
+        <ReactMarkdown rehypePlugins={[rehypeRaw]}>
+          {selectedWork.content}
+        </ReactMarkdown>
+      </div>
     </div>
   );
 };
