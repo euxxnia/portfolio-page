@@ -151,6 +151,8 @@
 }
 
 .worksDetailContent {
+  max-width: 60vw;
+  margin: 0 auto;
   color: var(--mono-30, #4a4a4a);
   text-align: left;
   font-family: Pretendard;
