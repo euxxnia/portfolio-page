@@ -1,5 +1,6 @@
 html,
 body {
+  font-family: pretendard;
   margin: 0; /* 기본 여백 제거 */
   padding: 0; /* 기본 패딩 제거 */
   height: 100%; /* 전체 높이 설정 */
@@ -19,6 +20,7 @@ body {
 }
 
 .Contact {
+  font-family: pretendard;
   position: fixed; /* 화면에 고정시키기 위해 position을 fixed로 설정 */
   bottom: 30px; /* 화면의 아래쪽에서 30px 떨어지게 설정 */
   left: 0; /* 화면의 왼쪽 가장자리에 맞춤 */
@@ -31,6 +33,7 @@ body {
 }
 
 .About {
+  font-family: pretendard;
   margin: 140px auto;
   margin-bottom: 40px;
   color: #4a4a4a;
