@@ -1,0 +1,184 @@
+.background {
+  position: absolute; /* 전체 화면을 차지하기 위해 절대 위치 */
+  top: 72px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/images/background.svg');
+  background-size: cover; /* 이미지 크기를 요소에 맞게 조정 */
+  background-position: center; /* 배경 이미지의 위치를 중앙으로 설정 */
+  z-index: -1; /* 다른 콘텐츠 아래에 위치하게 설정 */
+}
+
+.header {
+  margin: 12px;
+  margin-top: 16px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.navButton {
+  color: #ded3d1;
+  font-family: pretendard;
+  font-weight: 600;
+  font-size: 17px;
+  padding: 12px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.activeButton {
+  color: #7b6b68;
+}
+
+.filter {
+  margin: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.tag {
+  display: inline-flex;
+  padding: 7px 12px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40px;
+  border: 1px solid var(--main-pinkGray5, #d5c2bf);
+  background: var(--mono-white, #fff);
+  color: var(--main-pinkGray5, #d5c2bf);
+  font-family: Pretendard;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.activeTag {
+  border-radius: 40px;
+  background: var(--main-pinkGray5, #d5c2bf);
+  color: white;
+}
+
+.worksList {
+  margin: 0 auto;
+  display: flex;
+  width: 920px;
+  align-items: center;
+  align-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  padding-bottom: 60px;
+}
+
+.workItem {
+  width: 280px;
+  height: 280px;
+  background: #ddd;
+  color: white;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+}
+
+.itemGradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 40%,
+    rgba(0, 0, 0, 0.6) 100% /* 그 후 블러 효과를 적용 */
+  );
+}
+
+.itemInner {
+  position: absolute;
+  bottom: 26px;
+  /* left: 50%; */
+  transform: translateX(-50%);
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 0px;
+  z-index: 2;
+}
+
+.itemTitle {
+  display: inline-flex;
+  width: 237px;
+  color: var(--mono-white, #fff);
+  font-family: Pretendard;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.itemInfos {
+  color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  width: 237px;
+  height: 16px;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-size: 13.5px;
+  font-weight: 400;
+}
+
+.worksDetailTitle {
+  margin: 20px;
+  color: var(--mono-30, #4a4a4a);
+  font-family: Pretendard;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.worksDetailDivider {
+  width: 70vw;
+  height: 1px;
+  background-color: #e8e8e8;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.worksDetailContent {
+  color: var(--mono-30, #4a4a4a);
+  text-align: left;
+  font-family: Pretendard;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 180%;
+  white-space: pre-wrap;
+}
+
+.worksDetailContent h1,
+.worksDetailContent h2,
+.worksDetailContent h3 {
+  margin-top: 3rem;
+  font-weight: 700;
+}
+
+.worksDetailContent p {
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.worksDetailContent a {
+  color: #9fd3ff;
+  text-decoration: underline;
+}
+
+.worksDetailContent ul {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+}

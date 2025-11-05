@@ -28,6 +28,11 @@ textarea,
 select {
   font: inherit;
 }
+button {
+  border: none;
+  background-color: unset;
+  cursor: pointer;
+}
 p,
 h1,
 h2,

@@ -1,42 +1,64 @@
+html,
+body {
+  margin: 0; /* 기본 여백 제거 */
+  padding: 0; /* 기본 패딩 제거 */
+  height: 100%; /* 전체 높이 설정 */
+  background-color: #fff8f5; /* 배경색 설정 */
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  /* padding: 2rem; */
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  filter: saturate(3);
+  filter: brightness(0.9);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Contact {
+  position: fixed; /* 화면에 고정시키기 위해 position을 fixed로 설정 */
+  bottom: 30px; /* 화면의 아래쪽에서 30px 떨어지게 설정 */
+  left: 0; /* 화면의 왼쪽 가장자리에 맞춤 */
+  right: 0;
+  width: 160px;
+  display: flex; /* Flexbox를 사용하여 아이템을 가로로 배치 */
+  justify-content: space-between; /* 아이템들 사이에 같은 간격 배치 */
+  align-items: center; /* 세로 방향으로 아이템들을 가운데 정렬 */
+  margin: 20px auto; /* div 자체를 화면 가로 중앙에 배치 */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.About {
+  margin: 140px auto;
+  margin-bottom: 40px;
+  color: #4a4a4a;
 }
 
-.card {
-  padding: 2em;
+.profile {
+  width: 160px;
+  border-radius: 112px;
+  margin: 30px auto;
+  box-shadow: 0px 0px 20px 0px rgba(244, 234, 229, 0.58);
 }
 
-.read-the-docs {
-  color: #888;
+.major {
+  color: #d5cfcf;
+}
+
+.light-text {
+  color: #d5c2bf;
+}
+
+.background {
+  position: absolute; /* 전체 화면을 차지하기 위해 절대 위치 */
+  top: 72px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/images/background.svg');
+  background-size: cover; /* 이미지 크기를 요소에 맞게 조정 */
+  background-position: center; /* 배경 이미지의 위치를 중앙으로 설정 */
+  z-index: -1; /* 다른 콘텐츠 아래에 위치하게 설정 */
 }
