@@ -34,9 +34,7 @@ const WorksDetailPage: React.FC = () => {
         alt={selectedWork.title}
         className={styles.worksDetailImage}
       />
-      <div
-        className={styles.worksDetailInfos}
-      >
+      <div className={styles.worksDetailInfos}>
         <p>{selectedWork.date}</p>
         <p>#{selectedWork.keywords.join(', #')}</p>
       </div>

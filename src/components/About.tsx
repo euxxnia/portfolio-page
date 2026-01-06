@@ -20,16 +20,21 @@ const About = () => {
       <Line width="52px" />
       <p className="intro">
         I am a senior undergraduate student at Seoul National University, double
-        majoring in Visual Communication Design and Computer Science &
-        Engineering. My passion lies in building systems that semantically
-        structure memories and intentions to support human reflection. I am
-        conducting research as an undergraduate intern at{' '}
+        majoring in{' '}
+        <span className="majorEmphasis">Visual Communication Design</span> and{' '}
+        <span className="majorEmphasis">
+          Computer Science &amp; Engineering
+        </span>
+        . My passion lies in building systems that semantically structure
+        memories and intentions to support human reflection. I am conducting
+        research as an intern at{' '}
         <a
           className="labLink"
           href="https://hcil.snu.ac.kr/"
           target="_blank"
           rel="noreferrer"
         >
+          SNU HCIL
           <img
             className="labLogo"
             src="/images/hcilLogo.png"
@@ -37,7 +42,6 @@ const About = () => {
             loading="lazy"
             decoding="async"
           />
-          SNU HCIL
         </a>{' '}
         advised by Prof. Jinwook Seo and{' '}
         <a
@@ -46,6 +50,7 @@ const About = () => {
           target="_blank"
           rel="noreferrer"
         >
+          KAIST KIXLAB
           <img
             className="labLogo"
             src="/images/kixlabLogo.png"
@@ -53,7 +58,6 @@ const About = () => {
             loading="lazy"
             decoding="async"
           />
-          KAIST KIXLAB
         </a>{' '}
         advised by Prof. Juho Kim. I am especially drawn to purpose-driven and
         meaningful things.
