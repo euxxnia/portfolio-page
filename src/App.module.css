@@ -11,11 +11,15 @@
 }
 
 .header {
-  margin: 12px;
-  margin-top: 16px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 16px 12px 12px;
   display: flex;
   align-content: center;
   justify-content: center;
+  background-color: rgba(255, 248, 245, 0.9);
+  backdrop-filter: blur(8px);
 }
 
 .navButton {
@@ -185,7 +189,7 @@
 
 @media (max-width: 768px) {
   .header {
-    margin: 10px 12px;
+    padding: 12px 12px 10px;
   }
 
   .navButton {
