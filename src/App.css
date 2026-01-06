@@ -1,6 +1,5 @@
 html,
 body {
-  font-family: pretendard;
   margin: 0; /* 기본 여백 제거 */
   padding: 0; /* 기본 패딩 제거 */
   height: 100%; /* 전체 높이 설정 */
@@ -20,7 +19,6 @@ body {
 }
 
 .Contact {
-  font-family: pretendard;
   position: fixed; /* 화면에 고정시키기 위해 position을 fixed로 설정 */
   bottom: 30px; /* 화면의 아래쪽에서 30px 떨어지게 설정 */
   left: 0; /* 화면의 왼쪽 가장자리에 맞춤 */
@@ -33,7 +31,6 @@ body {
 }
 
 .About {
-  font-family: pretendard;
   margin: 140px auto;
   margin-bottom: 40px;
   color: #4a4a4a;
@@ -64,4 +61,27 @@ body {
   background-size: cover; /* 이미지 크기를 요소에 맞게 조정 */
   background-position: center; /* 배경 이미지의 위치를 중앙으로 설정 */
   z-index: -1; /* 다른 콘텐츠 아래에 위치하게 설정 */
+}
+
+@media (max-width: 768px) {
+  #root {
+    max-width: 100%;
+  }
+
+  .About {
+    margin: 96px 24px 32px;
+  }
+
+  .profile {
+    width: 128px;
+    margin: 24px auto;
+  }
+
+  .Contact {
+    bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .background {
+    top: 56px;
+  }
 }

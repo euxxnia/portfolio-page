@@ -20,7 +20,6 @@
 
 .navButton {
   color: #ded3d1;
-  font-family: pretendard;
   font-weight: 600;
   font-size: 17px;
   padding: 12px;
@@ -49,7 +48,6 @@
   border: 1px solid var(--main-pinkGray5, #d5c2bf);
   background: var(--mono-white, #fff);
   color: var(--main-pinkGray5, #d5c2bf);
-  font-family: Pretendard;
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
@@ -65,7 +63,7 @@
 .worksList {
   margin: 0 auto;
   display: flex;
-  width: 920px;
+  width: min(920px, calc(100% - 32px));
   align-items: center;
   align-content: center;
   gap: 32px;
@@ -101,7 +99,7 @@
 .itemInner {
   position: absolute;
   bottom: 26px;
-  /* left: 50%; */
+  left: 50%;
   transform: translateX(-50%);
   display: inline-flex;
   flex-direction: column;
@@ -115,7 +113,6 @@
   display: inline-flex;
   width: 237px;
   color: var(--mono-white, #fff);
-  font-family: Pretendard;
   font-size: 17px;
   font-weight: 700;
   letter-spacing: 0.3px;
@@ -135,7 +132,6 @@
 .worksDetailTitle {
   margin: 20px;
   color: var(--mono-30, #4a4a4a);
-  font-family: Pretendard;
   font-size: 24px;
   font-style: normal;
   font-weight: 700;
@@ -155,12 +151,100 @@
   margin: 0 auto;
   color: var(--mono-30, #4a4a4a);
   text-align: left;
-  font-family: Pretendard;
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
   line-height: 180%;
   white-space: pre-wrap;
+}
+
+.worksDetailPage {
+  padding: 40px;
+}
+
+.worksDetailTags {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.worksDetailImage {
+  display: block;
+  width: 50vw;
+  height: auto;
+  margin: 40px auto 32px;
+}
+
+.worksDetailInfos {
+  margin: 20px;
+  color: #d5cfcf;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .header {
+    margin: 10px 12px;
+  }
+
+  .navButton {
+    font-size: 15px;
+    padding: 10px 12px;
+  }
+
+  .filter {
+    margin: 24px 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+
+  .worksList {
+    width: calc(100% - 32px);
+    gap: 16px;
+    padding-bottom: 40px;
+    justify-content: center;
+  }
+
+  .workItem {
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  .itemTitle {
+    width: 70vw;
+    font-size: 16px;
+  }
+
+  .itemInfos {
+    width: 70vw;
+    font-size: 12.5px;
+  }
+
+  .worksDetailPage {
+    padding: 24px 16px 40px;
+  }
+
+  .worksDetailImage {
+    width: 100%;
+    margin: 24px auto 20px;
+  }
+
+  .worksDetailDivider {
+    width: 90vw;
+  }
+
+  .worksDetailContent {
+    max-width: 90vw;
+    font-size: 14px;
+  }
 }
 
 .worksDetailContent h1,
