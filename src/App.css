@@ -42,6 +42,7 @@ body {
   color: #aa9490;
   line-height: 1.8;
   padding: 0 16px;
+  text-align: left;
 }
 
 .intro a {
@@ -54,18 +55,28 @@ body {
 }
 
 .labLink {
-  font-weight: 700;
+  font-weight: 600;
   white-space: nowrap;
-  color: #ff6f00;
+}
+
+.intro a.labLink,
+.intro a.labLink:visited,
+.intro a.labLink:hover,
+.intro a.labLink:active {
+  color: #b97751;
 }
 
 .labLogo {
   display: inline-block;
-  width: 14px;
-  height: 14px;
+  width: 17px;
+  height: 17px;
   object-fit: contain;
-  margin-right: 6px;
+  margin-left: 4px;
   vertical-align: -0.125em;
+}
+
+.majorEmphasis {
+  font-weight: 600;
 }
 
 .profileGroup {
