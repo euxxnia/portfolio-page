@@ -15,8 +15,8 @@ const WorksDetailPage: React.FC = () => {
   }
 
   return (
-    <div style={{ padding: '40px' }}>
-      <div style={{ display: 'flex', justifyContent: 'center', gap: '10px' }}>
+    <div className={styles.worksDetailPage}>
+      <div className={styles.worksDetailTags}>
         {selectedWork.tags.map((tag) => (
           <button
             key={tag}
@@ -32,22 +32,10 @@ const WorksDetailPage: React.FC = () => {
       <img
         src={selectedWork.image}
         alt={selectedWork.title}
-        style={{
-          margin: '0 auto',
-          marginTop: '40px',
-          marginBottom: '32px',
-          width: '50vw',
-          height: 'auto',
-        }}
+        className={styles.worksDetailImage}
       />
       <div
         className={styles.worksDetailInfos}
-        style={{
-          margin: '20px',
-          color: '#D5CFCF',
-          fontSize: '14px',
-          fontWeight: '500',
-        }}
       >
         <p>{selectedWork.date}</p>
         <p>#{selectedWork.keywords.join(', #')}</p>

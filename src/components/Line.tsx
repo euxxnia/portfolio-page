@@ -10,7 +10,7 @@ const Line = ({
         width: direction === 'horizontal' ? width : height,
         height: direction === 'horizontal' ? height : width,
         backgroundColor: color,
-        margin: direction === 'horizontal' ? '30px auto' : undefined,
+        margin: direction === 'horizontal' ? '40px auto' : undefined,
       }}
     ></div>
   );
