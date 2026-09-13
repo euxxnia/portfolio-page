@@ -51,11 +51,17 @@ body {
   height: 28.8px; /* 기존 36px의 80% */
 }
 
+/* 메인 2열 치수: 레이아웃과 오른쪽 배경 시작 위치가 함께 사용 */
+:root {
+  --main-left-col: 326px;
+  --main-col-gap: min(120px, 8vw);
+}
+
 /* 메인 페이지: 왼쪽 프로필 / 오른쪽 연구·링크 2열 (MacBook Pro 14" 시안 기준 수치) */
 .mainLayout {
   display: grid;
-  grid-template-columns: minmax(0, 350px) minmax(0, 1fr);
-  column-gap: min(120px, 8vw);
+  grid-template-columns: minmax(0, var(--main-left-col)) minmax(0, 1fr);
+  column-gap: var(--main-col-gap);
   align-items: start;
   /* 좌우: #root 바깥 여백과 합쳐 화면 가장자리에서 최소 64px 확보 */
   /* 하단: 고정된 Contact 아이콘과 겹치지 않도록 스크롤 공간 확보 */
@@ -121,7 +127,7 @@ body {
 .intro {
   margin: 0;
   color: #aa9490;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 24px;
   text-align: left;
 }
@@ -129,7 +135,7 @@ body {
 /* 왼쪽 자기소개는 오른쪽 연구 소개보다 1px 작게 */
 .About .intro {
   max-width: 302px; /* 첫 문단 1·2번째 줄 폭(약 301px)에 맞춤 */
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .intro + .intro {
@@ -192,7 +198,7 @@ body {
 
 .sectionTitle {
   margin: 0 0 16px;
-  font-size: 16.5px;
+  font-size: 16px;
   font-weight: 700;
   line-height: 22px;
   color: #aa9490;
@@ -279,7 +285,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 16.5px;
+  font-size: 16px;
   font-weight: 700;
   line-height: 22px;
   color: #aa9490;
@@ -335,8 +341,11 @@ body {
 /* 그라데이션 높이를 줄여 위(흰색)와 아래(배경색) 차이가 드러나게 함 */
 .background.backgroundFull {
   top: 0;
-  /* 오른쪽 열에만 깔기: 화면 가장자리 여백(최소 64px) + 왼쪽 열 350px + 열 간격의 1/8 지점부터 */
-  left: calc(max(64px, (100vw - 1280px) / 2) + 350px + min(120px, 8vw) / 8);
+  /* 오른쪽 열에만 깔기: 화면 가장자리 여백(최소 64px) + 왼쪽 열 + 열 간격의 1/8 지점 + 4px부터 */
+  left: calc(
+    max(64px, (100vw - 1280px) / 2) + var(--main-left-col) + var(--main-col-gap) /
+      8 + 4px
+  );
   right: 0;
   width: auto;
   height: 630px;
