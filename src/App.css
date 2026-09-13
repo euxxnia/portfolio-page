@@ -78,6 +78,7 @@ body {
 }
 
 .About {
+  margin-left: calc(16px * var(--s)); /* 왼쪽 패널 전체를 살짝 오른쪽으로 */
   color: #4a4a4a;
 }
 
@@ -312,7 +313,8 @@ body {
 .profileGroup {
   display: flex;
   align-items: center;
-  margin-left: calc(-14px * var(--s));
+  /* 글 기준 왼쪽으로 튀어나온 정도 (기존 -14px에서 6px 오른쪽) */
+  margin-left: calc(-8px * var(--s));
 }
 
 .profile {
@@ -376,6 +378,11 @@ body {
     padding-top: 0;
   }
 
+  /* 한 열일 때는 왼쪽 패널 이동 없이 아래 오른쪽 패널과 왼쪽 끝을 맞춤 */
+  .About {
+    margin-left: 0;
+  }
+
   /* 한 열일 때는 자기소개도 아래 연구 소개와 같은 폭 규칙을 따름 */
   .About .intro {
     max-width: calc(640px * var(--s));
@@ -398,7 +405,17 @@ body {
   }
 
   .mainLayout {
+    row-gap: 48px; /* 자기소개와 연구 소개 사이 간격을 조금 좁게 */
     padding: 56px 24px 100px;
+  }
+
+  /* 모바일에서는 구분선 없이 이름 아래 여백만 둠 */
+  .nameDivider {
+    display: none;
+  }
+
+  .nameRow {
+    margin-bottom: 28px;
   }
 
   .mainRight > section {
@@ -428,7 +445,7 @@ body {
 
   .publicationThumb {
     flex-basis: auto;
-    width: 80%;
+    width: 100%;
   }
 
   .publicationBody {
