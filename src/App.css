@@ -6,8 +6,16 @@ body {
   background-color: #fff8f5; /* 배경색 설정 */
 }
 
+/* 메인 페이지 크기 배율: 브라우저 110% 확대 상태와 같게 보이도록 PC·태블릿에서 1.1 (모바일은 1) */
+:root {
+  --s: 1.1;
+  /* 메인 2열 치수: 레이아웃과 오른쪽 배경 시작 위치가 함께 사용 */
+  --main-left-col: calc(326px * var(--s));
+  --main-col-gap: min(calc(120px * var(--s)), 8vw);
+}
+
 #root {
-  max-width: 1280px;
+  max-width: calc(1280px * var(--s));
   margin: 0 auto;
   /* padding: 2rem; */
   text-align: center;
@@ -28,9 +36,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  gap: 26px; /* 아이콘 중심 간격 56px 유지 */
-  height: 112px;
-  padding-bottom: 28px;
+  gap: calc(26px * var(--s)); /* 아이콘 중심 간격 56px(×배율) 유지 */
+  height: calc(112px * var(--s));
+  padding-bottom: calc(28px * var(--s));
   background: linear-gradient(
     to bottom,
     rgba(255, 248, 245, 0) 0%,
@@ -48,13 +56,7 @@ body {
 .Contact .logo {
   display: block;
   width: auto;
-  height: 28.8px; /* 기존 36px의 80% */
-}
-
-/* 메인 2열 치수: 레이아웃과 오른쪽 배경 시작 위치가 함께 사용 */
-:root {
-  --main-left-col: 326px;
-  --main-col-gap: min(120px, 8vw);
+  height: calc(28.8px * var(--s)); /* 기존 36px의 80% */
 }
 
 /* 메인 페이지: 왼쪽 프로필 / 오른쪽 연구·링크 2열 (MacBook Pro 14" 시안 기준 수치) */
@@ -63,9 +65,15 @@ body {
   grid-template-columns: minmax(0, var(--main-left-col)) minmax(0, 1fr);
   column-gap: var(--main-col-gap);
   align-items: start;
-  /* 좌우: #root 바깥 여백과 합쳐 화면 가장자리에서 최소 64px 확보 */
+  /* 좌우: #root 바깥 여백과 합쳐 화면 가장자리에서 최소 64px(×배율) 확보 */
   /* 하단: 고정된 Contact 아이콘과 겹치지 않도록 스크롤 공간 확보 */
-  padding: 60px clamp(0px, calc(64px - (100vw - 1280px) / 2), 64px) 160px;
+  padding: calc(60px * var(--s))
+    clamp(
+      0px,
+      calc(64px * var(--s) - (100vw - 1280px * var(--s)) / 2),
+      calc(64px * var(--s))
+    )
+    calc(160px * var(--s));
   text-align: left;
 }
 
@@ -74,16 +82,16 @@ body {
 }
 
 .mainRight {
-  max-width: 712px;
-  padding-top: 16px;
+  max-width: calc(712px * var(--s));
+  padding-top: calc(16px * var(--s));
 }
 
 .mainRight > .intro {
-  max-width: 640px;
+  max-width: calc(640px * var(--s));
 }
 
 .mainRight > section {
-  margin-top: 40px;
+  margin-top: calc(40px * var(--s));
 }
 
 /* Publications와 하단 링크는 Manrope 사용 */
@@ -100,46 +108,46 @@ body {
 .nameRow {
   display: flex;
   align-items: baseline;
-  gap: 8px;
-  margin-top: 34px;
+  gap: calc(8px * var(--s));
+  margin-top: calc(34px * var(--s));
 }
 
 .name {
-  font-size: 22px;
+  font-size: calc(22px * var(--s));
   font-weight: 600;
   line-height: 1.2;
   color: #4a4a4a;
 }
 
 .nameKo {
-  font-size: 16px;
+  font-size: calc(16px * var(--s));
   font-weight: 500;
   color: #4a4a4a;
 }
 
 .nameDivider {
-  width: 76px;
+  width: calc(76px * var(--s));
   height: 1px;
-  margin: 35px 0 42px;
+  margin: calc(35px * var(--s)) 0 calc(42px * var(--s));
   background-color: #e7dedc;
 }
 
 .intro {
   margin: 0;
   color: #aa9490;
-  font-size: 15px;
-  line-height: 24px;
+  font-size: calc(15px * var(--s));
+  line-height: calc(24px * var(--s));
   text-align: left;
 }
 
 /* 왼쪽 자기소개는 오른쪽 연구 소개보다 1px 작게 */
 .About .intro {
-  max-width: 302px; /* 첫 문단 1·2번째 줄 폭(약 301px)에 맞춤 */
-  font-size: 14px;
+  max-width: calc(302px * var(--s)); /* 첫 문단 1·2번째 줄 폭에 맞춤 */
+  font-size: calc(14px * var(--s));
 }
 
 .intro + .intro {
-  margin-top: 24px;
+  margin-top: calc(24px * var(--s));
 }
 
 .intro a {
@@ -175,10 +183,10 @@ body {
 
 .labLogo {
   display: inline-block;
-  width: 17px;
-  height: 17px;
+  width: calc(17px * var(--s));
+  height: calc(17px * var(--s));
   object-fit: contain;
-  margin-left: 4px;
+  margin-left: calc(4px * var(--s));
   vertical-align: -0.125em;
 }
 
@@ -197,17 +205,17 @@ body {
 }
 
 .sectionTitle {
-  margin: 0 0 16px;
-  font-size: 16px;
+  margin: 0 0 calc(16px * var(--s));
+  font-size: calc(16px * var(--s));
   font-weight: 700;
-  line-height: 22px;
+  line-height: calc(22px * var(--s));
   color: #aa9490;
 }
 
 .publicationList {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: calc(24px * var(--s));
   margin: 0;
   padding: 0;
   list-style: none;
@@ -216,13 +224,13 @@ body {
 .publication {
   display: flex;
   align-items: flex-start;
-  gap: 20px;
+  gap: calc(20px * var(--s));
 }
 
 .publicationThumb {
   display: block;
-  flex: 0 0 206px;
-  width: 206px;
+  flex: 0 0 calc(206px * var(--s));
+  width: calc(206px * var(--s));
   height: auto;
   background-color: #fff;
   border-radius: 4px;
@@ -230,21 +238,21 @@ body {
 }
 
 .publicationBody {
-  padding-top: 5px;
+  padding-top: calc(5px * var(--s));
 }
 
 .publicationTitle {
-  margin: 0 0 6px;
-  font-size: 14.25px;
+  margin: 0 0 calc(6px * var(--s));
+  font-size: calc(14.25px * var(--s));
   font-weight: 600;
-  line-height: 20px;
+  line-height: calc(20px * var(--s));
   color: #7b6b68;
 }
 
 .publicationAuthors {
-  margin: 0 0 7px;
-  font-size: 13px;
-  line-height: 18px;
+  margin: 0 0 calc(7px * var(--s));
+  font-size: calc(13px * var(--s));
+  line-height: calc(18px * var(--s));
   color: #aa9490;
 }
 
@@ -256,10 +264,10 @@ body {
 .publicationVenue {
   display: flex;
   align-items: baseline;
-  gap: 8px;
+  gap: calc(8px * var(--s));
   margin: 0;
-  font-size: 13px;
-  line-height: 18px;
+  font-size: calc(13px * var(--s));
+  line-height: calc(18px * var(--s));
   color: #aa9490;
 }
 
@@ -277,24 +285,24 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 12px;
-  margin-top: 44px;
+  gap: calc(12px * var(--s));
+  margin-top: calc(44px * var(--s));
 }
 
 .moreLink {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  font-size: 16px;
+  gap: calc(8px * var(--s));
+  font-size: calc(16px * var(--s));
   font-weight: 700;
-  line-height: 22px;
+  line-height: calc(22px * var(--s));
   color: #aa9490;
   text-decoration: none;
 }
 
 .moreLink svg {
-  width: 14px;
-  height: 14px;
+  width: calc(14px * var(--s));
+  height: calc(14px * var(--s));
 }
 
 .moreLink:hover {
@@ -304,17 +312,17 @@ body {
 .profileGroup {
   display: flex;
   align-items: center;
-  margin-left: -14px;
+  margin-left: calc(-14px * var(--s));
 }
 
 .profile {
-  width: 132px;
+  width: calc(132px * var(--s));
   border-radius: 112px;
   box-shadow: 0px 0px 20px 0px rgba(244, 234, 229, 0.58);
 }
 
 .profileSecondary {
-  margin-left: -40px;
+  margin-left: calc(-40px * var(--s));
 }
 
 .major {
@@ -341,14 +349,14 @@ body {
 /* 그라데이션 높이를 줄여 위(흰색)와 아래(배경색) 차이가 드러나게 함 */
 .background.backgroundFull {
   top: 0;
-  /* 오른쪽 열에만 깔기: 화면 가장자리 여백(최소 64px) + 왼쪽 열 + 열 간격의 1/8 지점 + 4px부터 */
+  /* 오른쪽 열에만 깔기: 화면 가장자리 여백(최소 64px) + 왼쪽 열 + 열 간격의 1/8 지점 + 4px부터 (모두 ×배율) */
   left: calc(
-    max(64px, (100vw - 1280px) / 2) + var(--main-left-col) + var(--main-col-gap) /
-      8 + 4px
+    max(calc(64px * var(--s)), (100vw - 1280px * var(--s)) / 2) +
+      var(--main-left-col) + var(--main-col-gap) / 8 + 4px * var(--s)
   );
   right: 0;
   width: auto;
-  height: 630px;
+  height: calc(630px * var(--s));
   /* background.svg와 같은 그라데이션(위 16% 흰색 → 아래 투명)을 CSS로 그려 폭은 항상 화면 전체 */
   background-image: linear-gradient(
     to bottom,
@@ -357,11 +365,11 @@ body {
   );
 }
 
-/* 2열에서 논문 글이 썸네일 옆에 들어가지 못하는 폭부터 한 열로 쌓되 좌우 여백(64px)은 유지 */
-@media (max-width: 1100px) {
+/* 2열에서 논문 글이 썸네일 옆에 들어가지 못하는 폭(1100px × 배율 1.1)부터 한 열로 쌓되 좌우 여백은 유지 */
+@media (max-width: 1210px) {
   .mainLayout {
     grid-template-columns: minmax(0, 1fr);
-    row-gap: 64px;
+    row-gap: calc(64px * var(--s));
   }
 
   .mainRight {
@@ -370,7 +378,7 @@ body {
 
   /* 한 열일 때는 자기소개도 아래 연구 소개와 같은 폭 규칙을 따름 */
   .About .intro {
-    max-width: 640px;
+    max-width: calc(640px * var(--s));
   }
 
   /* 한 열일 때는 좌우 구분 없이 전체 폭에 배경 */
@@ -380,6 +388,11 @@ body {
 }
 
 @media (max-width: 768px) {
+  /* 모바일은 기존 크기 그대로 */
+  :root {
+    --s: 1;
+  }
+
   #root {
     max-width: 100%;
   }
