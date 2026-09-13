@@ -145,6 +145,7 @@ body {
 .About .intro {
   max-width: calc(302px * var(--s)); /* 첫 문단 1·2번째 줄 폭에 맞춤 */
   font-size: calc(14px * var(--s));
+  font-weight: 380;
 }
 
 .intro + .intro {
@@ -192,7 +193,7 @@ body {
 }
 
 .majorEmphasis {
-  font-weight: 500;
+  font-weight: 450;
 }
 
 .profName {

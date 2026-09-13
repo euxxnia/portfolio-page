@@ -18,6 +18,32 @@ export type Work = {
 
 export const works: Work[] = [
   {
+    id: 12,
+    title: '스마트도서관 리브랜딩',
+    tags: ['Graphic'],
+    date: '2025',
+    keywords: ['Identity Design'],
+    image: '/images/works/SmartLibrary/0.jpg',
+    content: `
+<div style="display: flex; gap: 10px; justify-content: center;">
+  <img src="/images/works/SmartLibrary/1.jpg" width="80%" />
+</div>
+<div style="display: flex; gap: 10px; padding-top: 20px; justify-content: center;">
+  <img src="/images/works/SmartLibrary/2.jpg" width="80%" />
+</div>
+`,
+  },
+  {
+    id: 13,
+    title: 'TraceWeaver',
+    tags: ['HCI'],
+    date: '2025',
+    keywords: ['Information Visualization'],
+    image: '/images/works/TraceWeaver/0.png',
+    content:
+      'Team project for Information Visualization course, focusing on visualizing complex data relationships.',
+  },
+  {
     id: 1,
     title: 'SNU CSE 홈페이지 리뉴얼',
     tags: ['UXUI'],
