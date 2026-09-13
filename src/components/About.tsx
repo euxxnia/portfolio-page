@@ -1,7 +1,5 @@
 import profile from '/favicon.svg';
 
-import Line from '../components/Line.tsx';
-
 const About = () => {
   return (
     <div className="About">
@@ -15,9 +13,11 @@ const About = () => {
           decoding="async"
         />
       </div>
-      <h3>최유진</h3>
-      <p>Eugene Choi</p>
-      <Line width="52px" />
+      <div className="nameRow">
+        <h3 className="name">Eugene Choi</h3>
+        <span className="nameKo">최유진</span>
+      </div>
+      <div className="nameDivider" />
       <p className="intro">
         I am a senior undergraduate student at Seoul National University, double
         majoring in{' '}
@@ -25,9 +25,10 @@ const About = () => {
         <span className="majorEmphasis">
           Computer Science &amp; Engineering
         </span>
-        . My passion lies in building systems that semantically structure
-        memories and intentions to support human reflection. I am conducting
-        research as an intern at{' '}
+        .
+      </p>
+      <p className="intro">
+        I am currently a research intern at{' '}
         <a
           className="labLink"
           href="https://hcil.snu.ac.kr/"
@@ -42,25 +43,28 @@ const About = () => {
             loading="lazy"
             decoding="async"
           />
-        </a>{' '}
-        advised by Prof. Jinwook Seo and{' '}
+        </a>
+        , advised by <span className="profName">Prof. Jinwook Seo</span>. My
+        previous mentors include{' '}
+        <span className="profName">Prof. Eunkyung Jo</span> at{' '}
         <a
-          className="labLink"
+          className="labLinkPlain"
+          href="https://h2ci-lab.com/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          POSTECH H2CI Lab
+        </a>{' '}
+        and <span className="profName">Prof. Juho Kim</span> at{' '}
+        <a
+          className="labLinkPlain"
           href="https://kixlab.org/"
           target="_blank"
           rel="noreferrer"
         >
           KAIST KIXLAB
-          <img
-            className="labLogo"
-            src="/images/kixlabLogo.png"
-            alt="KAIST KIXLAB logo"
-            loading="lazy"
-            decoding="async"
-          />
-        </a>{' '}
-        advised by Prof. Juho Kim. I am especially drawn to purpose-driven and
-        meaningful things.
+        </a>
+        .
       </p>
     </div>
   );

@@ -18,31 +18,122 @@ body {
   filter: brightness(0.9);
 }
 
+/* 화면 하단 고정 바: 그라데이션으로 스크롤되는 글씨를 가려 아이콘과 겹치지 않게 함 */
 .Contact {
-  position: fixed; /* 화면에 고정시키기 위해 position을 fixed로 설정 */
-  bottom: 20px; /* move 40px down from 30px */
-  left: 0; /* 화면의 왼쪽 가장자리에 맞춤 */
+  position: fixed;
+  left: 0;
   right: 0;
-  width: 160px;
-  display: flex; /* Flexbox를 사용하여 아이템을 가로로 배치 */
-  justify-content: space-between; /* 아이템들 사이에 같은 간격 배치 */
-  align-items: center; /* 세로 방향으로 아이템들을 가운데 정렬 */
-  margin: 20px auto; /* div 자체를 화면 가로 중앙에 배치 */
+  bottom: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 26px; /* 아이콘 중심 간격 56px 유지 */
+  height: 112px;
+  padding-bottom: 28px;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 248, 245, 0) 0%,
+    #fff8f5 55%
+  );
+  pointer-events: none; /* 그라데이션 영역은 아래 링크 클릭을 막지 않음 */
+}
+
+.Contact a {
+  display: block;
+  line-height: 0;
+  pointer-events: auto;
+}
+
+.Contact .logo {
+  display: block;
+  width: auto;
+  height: 28.8px; /* 기존 36px의 80% */
+}
+
+/* 메인 페이지: 왼쪽 프로필 / 오른쪽 연구·링크 2열 (MacBook Pro 14" 시안 기준 수치) */
+.mainLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 350px) minmax(0, 1fr);
+  column-gap: min(120px, 8vw);
+  align-items: start;
+  /* 좌우: #root 바깥 여백과 합쳐 화면 가장자리에서 최소 64px 확보 */
+  /* 하단: 고정된 Contact 아이콘과 겹치지 않도록 스크롤 공간 확보 */
+  padding: 60px clamp(0px, calc(64px - (100vw - 1280px) / 2), 64px) 160px;
+  text-align: left;
 }
 
 .About {
-  margin: 50px auto;
-  margin-bottom: 40px;
   color: #4a4a4a;
 }
 
+.mainRight {
+  max-width: 712px;
+  padding-top: 16px;
+}
+
+.mainRight > .intro {
+  max-width: 640px;
+}
+
+.mainRight > section {
+  margin-top: 40px;
+}
+
+/* Publications와 하단 링크는 Manrope 사용 */
+.mainRight > section,
+.moreLinks {
+  font-family:
+    'Manrope',
+    'Pretendard',
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+}
+
+.nameRow {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: 34px;
+}
+
+.name {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #4a4a4a;
+}
+
+.nameKo {
+  font-size: 16px;
+  font-weight: 500;
+  color: #4a4a4a;
+}
+
+.nameDivider {
+  width: 76px;
+  height: 1px;
+  margin: 35px 0 42px;
+  background-color: #e7dedc;
+}
+
 .intro {
-  max-width: 680px;
-  margin: 0 auto;
+  margin: 0;
   color: #aa9490;
-  line-height: 1.8;
-  padding: 0 16px;
+  font-size: 16px;
+  line-height: 24px;
   text-align: left;
+}
+
+/* 왼쪽 자기소개는 오른쪽 연구 소개보다 1px 작게 */
+.About .intro {
+  max-width: 302px; /* 첫 문단 1·2번째 줄 폭(약 301px)에 맞춤 */
+  font-size: 15px;
+}
+
+.intro + .intro {
+  margin-top: 24px;
 }
 
 .intro a {
@@ -55,7 +146,17 @@ body {
 }
 
 .labLink {
+  font-family:
+    'Manrope',
+    'Pretendard',
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
   font-weight: 600;
+  white-space: nowrap;
+}
+
+.labLinkPlain {
   white-space: nowrap;
 }
 
@@ -76,24 +177,138 @@ body {
 }
 
 .majorEmphasis {
+  font-weight: 500;
+}
+
+.profName {
+  font-weight: 450;
+  white-space: nowrap;
+}
+
+.interestEmphasis {
+  font-weight: 500;
+  color: #8f7b77;
+}
+
+.sectionTitle {
+  margin: 0 0 16px;
+  font-size: 16.5px;
+  font-weight: 700;
+  line-height: 22px;
+  color: #aa9490;
+}
+
+.publicationList {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.publication {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.publicationThumb {
+  display: block;
+  flex: 0 0 206px;
+  width: 206px;
+  height: auto;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0px 0px 16px 0px rgba(244, 234, 229, 0.8);
+}
+
+.publicationBody {
+  padding-top: 5px;
+}
+
+.publicationTitle {
+  margin: 0 0 6px;
+  font-size: 14.25px;
   font-weight: 600;
+  line-height: 20px;
+  color: #7b6b68;
+}
+
+.publicationAuthors {
+  margin: 0 0 7px;
+  font-size: 13px;
+  line-height: 18px;
+  color: #aa9490;
+}
+
+.publicationAuthors .me {
+  font-weight: 500;
+  color: #7b6b68;
+}
+
+.publicationVenue {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 0;
+  font-size: 13px;
+  line-height: 18px;
+  color: #aa9490;
+}
+
+.publicationVenue a {
+  color: #d5c2bf;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.publicationVenue a:hover {
+  color: #aa9490;
+}
+
+.moreLinks {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 44px;
+}
+
+.moreLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16.5px;
+  font-weight: 700;
+  line-height: 22px;
+  color: #aa9490;
+  text-decoration: none;
+}
+
+.moreLink svg {
+  width: 14px;
+  height: 14px;
+}
+
+.moreLink:hover {
+  color: #7b6b68;
 }
 
 .profileGroup {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  margin: 30px auto;
+  margin-left: -14px;
 }
 
 .profile {
-  width: 160px;
+  width: 132px;
   border-radius: 112px;
   box-shadow: 0px 0px 20px 0px rgba(244, 234, 229, 0.58);
 }
 
 .profileSecondary {
-  margin-left: -12px;
+  margin-left: -40px;
 }
 
 .major {
@@ -116,37 +331,98 @@ body {
   z-index: -1; /* 다른 콘텐츠 아래에 위치하게 설정 */
 }
 
+/* 헤더가 없는 메인 페이지에서는 맨 위부터 배경 표시 */
+/* 그라데이션 높이를 줄여 위(흰색)와 아래(배경색) 차이가 드러나게 함 */
+.background.backgroundFull {
+  top: 0;
+  /* 오른쪽 열에만 깔기: 화면 가장자리 여백(최소 64px) + 왼쪽 열 350px + 열 간격의 1/8 지점부터 */
+  left: calc(max(64px, (100vw - 1280px) / 2) + 350px + min(120px, 8vw) / 8);
+  right: 0;
+  width: auto;
+  height: 630px;
+  /* background.svg와 같은 그라데이션(위 16% 흰색 → 아래 투명)을 CSS로 그려 폭은 항상 화면 전체 */
+  background-image: linear-gradient(
+    to bottom,
+    #fff 16%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+/* 2열에서 논문 글이 썸네일 옆에 들어가지 못하는 폭부터 한 열로 쌓되 좌우 여백(64px)은 유지 */
+@media (max-width: 1100px) {
+  .mainLayout {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 64px;
+  }
+
+  .mainRight {
+    padding-top: 0;
+  }
+
+  /* 한 열일 때는 자기소개도 아래 연구 소개와 같은 폭 규칙을 따름 */
+  .About .intro {
+    max-width: 640px;
+  }
+
+  /* 한 열일 때는 좌우 구분 없이 전체 폭에 배경 */
+  .background.backgroundFull {
+    left: 0;
+  }
+}
+
 @media (max-width: 768px) {
   #root {
     max-width: 100%;
   }
 
-  .About {
-    margin: 96px 24px 32px;
+  .mainLayout {
+    padding: 56px 24px 100px;
+  }
+
+  .mainRight > section {
+    margin-top: 48px;
+  }
+
+  .moreLinks {
+    margin-top: 56px;
+  }
+
+  .profileGroup {
+    margin-left: 0;
   }
 
   .profile {
     width: 128px;
   }
 
-  .profileGroup {
-    margin: 24px auto;
-  }
-
   .profileSecondary {
-    margin-left: -10px;
+    margin-left: -32px;
   }
 
-  .intro {
-    max-width: 100%;
-    padding: 0;
+  .publication {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .publicationThumb {
+    flex-basis: auto;
+    width: 80%;
+  }
+
+  .publicationBody {
+    padding-top: 0;
   }
 
   .Contact {
-    bottom: calc(-20px + env(safe-area-inset-bottom, 0px));
+    height: 96px;
+    padding-bottom: calc(20px + env(safe-area-inset-bottom, 0px));
   }
 
   .background {
     top: 56px;
+  }
+
+  .background.backgroundFull {
+    height: 100%;
   }
 }

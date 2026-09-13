@@ -1,6 +1,6 @@
 import './App.css';
 
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 
 import DefaultHeader from './components/Header';
 import MainPage from './page/mainPage';
@@ -8,10 +8,14 @@ import WorksDetailPage from './page/worksDetailPage';
 import WorksPage from './page/worksPage';
 
 const App = () => {
+  const location = useLocation();
+  const isMainPage = location.pathname === '/';
+
   return (
     <>
-      <DefaultHeader />
-      <div className="background"></div>
+      {/* 메인 페이지는 본문 하단 링크로 이동하므로 헤더를 숨김 */}
+      {!isMainPage && <DefaultHeader />}
+      <div className={`background ${isMainPage ? 'backgroundFull' : ''}`}></div>
       <div>
         <Routes>
           <Route element={<MainPage />} path="/" />
