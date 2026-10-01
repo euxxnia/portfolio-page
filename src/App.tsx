@@ -3,6 +3,8 @@ import './App.css';
 import { Route, Routes, useLocation } from 'react-router-dom';
 
 import DefaultHeader from './components/Header';
+import BlogDetailPage from './page/blogDetailPage';
+import BlogPage from './page/blogPage';
 import MainPage from './page/mainPage';
 import WorksDetailPage from './page/worksDetailPage';
 import WorksPage from './page/worksPage';
@@ -22,17 +24,10 @@ const App = () => {
           <Route element={<WorksPage />} path="/works" />
           <Route element={<BlogPage />} path="/blog" />
           <Route path="/works/:id" element={<WorksDetailPage />} />
+          <Route path="/blog/:slug" element={<BlogDetailPage />} />
         </Routes>
       </div>
     </>
-  );
-};
-
-const BlogPage = () => {
-  return (
-    <div>
-      <h1>Blog Articles</h1>
-    </div>
   );
 };
 

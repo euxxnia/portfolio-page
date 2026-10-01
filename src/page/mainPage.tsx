@@ -46,7 +46,7 @@ const MainPage: React.FC = () => {
               <Chevron />
             </Link>
             <Link className="moreLink" to="/blog">
-              Blogs
+              Blog Articles
               <Chevron />
             </Link>
           </nav>

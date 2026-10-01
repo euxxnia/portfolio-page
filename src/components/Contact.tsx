@@ -1,3 +1,4 @@
+import cvIcon from '/images/cvIcon.svg';
 import githubLogo from '/images/githubLogo.svg';
 import instagramLogo from '/images/instagramLogo.svg';
 import mailIcon from '/images/mailIcon.svg';
@@ -5,6 +6,9 @@ import mailIcon from '/images/mailIcon.svg';
 const Contact = () => {
   return (
     <div className="Contact">
+      <a href="/files/CV_2610.pdf" target="_blank" rel="noreferrer">
+        <img src={cvIcon} className="logo" alt="CV" />
+      </a>
       <a
         href="https://www.instagram.com/rrrr.chive/"
         target="_blank"
