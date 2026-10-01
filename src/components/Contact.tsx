@@ -18,6 +18,9 @@ const Contact = () => {
       <a href="mailto:eugene@snu.ac.kr" target="_blank" rel="noreferrer">
         <img src={mailIcon} className="logo" alt="mail" />
       </a>
+      <a href="/cv.pdf" target="_blank" rel="noreferrer" className="cvLink">
+        CV
+      </a>
     </div>
   );
 };

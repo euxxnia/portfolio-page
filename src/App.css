@@ -59,6 +59,20 @@ body {
   height: calc(28.8px * var(--s)); /* 기존 36px의 80% */
 }
 
+/* 아이콘과 같은 높이의 텍스트 링크 */
+.Contact .cvLink {
+  height: calc(28.8px * var(--s));
+  line-height: calc(28.8px * var(--s));
+  font-size: calc(20px * var(--s));
+  font-weight: 700;
+  color: #d2c8c6; /* 아이콘 톤에 맞춤 */
+  text-decoration: none;
+}
+
+.Contact .cvLink:hover {
+  filter: brightness(0.9);
+}
+
 /* 메인 페이지: 왼쪽 프로필 / 오른쪽 연구·링크 2열 (MacBook Pro 14" 시안 기준 수치) */
 .mainLayout {
   display: grid;
